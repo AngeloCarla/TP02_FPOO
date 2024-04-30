@@ -13,5 +13,4 @@ class Dado extends GameObject{
   stroke(0);
   rect(x, y, 100, 100, 10);
   }
-  
 }
