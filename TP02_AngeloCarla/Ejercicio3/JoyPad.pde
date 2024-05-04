@@ -1,11 +1,8 @@
-class JoyPad extends GameObject{
+class JoyPad{
  private boolean up;
  private boolean down;
  private boolean left;
  private boolean right;
- 
- public void display(){
-  }
   
  public boolean IsUp(){
   return this.up;

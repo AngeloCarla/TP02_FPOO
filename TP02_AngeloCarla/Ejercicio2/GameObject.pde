@@ -6,5 +6,5 @@ abstract class GameObject{
   this.y = y;
   }
 
-  abstract void display();
+ abstract void display();
 }

@@ -1,13 +1,13 @@
 class Frog extends GameObject{
- private PVector posicion;
  private PVector velocidad;
 
  public Frog(){
+  super(new PVector(0,0));
   }
   
- public Frog(int x, int y){
-  posicion = new PVector(x,y);
-  velocidad = new PVector(0,0);
+ public Frog(PVector posicion){
+  super(posicion);
+  velocidad = new PVector(10,10);
   }
  
  public void display(){

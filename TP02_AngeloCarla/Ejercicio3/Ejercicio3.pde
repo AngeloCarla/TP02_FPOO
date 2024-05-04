@@ -4,15 +4,16 @@
 
  public void setup(){
   size(500,500);
-  rana = new Frog(width/2,height/2);
-  rana.setVelocidad(new PVector(10,10));
+  rana = new Frog(new PVector(width/2,height));
   joypad = new JoyPad();
-  vehiculo = new Vehiculo();
+  vehiculo = new Vehiculo(new PVector(0, height / 2));
   }
  
  public void draw(){
-  background(255);
+  background(103, 216, 107);
   rana.display();
+  vehiculo.display();
+  vehiculo.mover(1);
   
   if(joypad.IsUp()){
    rana.mover(1);
