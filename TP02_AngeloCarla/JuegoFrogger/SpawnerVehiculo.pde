@@ -1,4 +1,4 @@
-class SpawnerVehiculo{
+class SpawnerVehiculo extends GameObject{
  private Vehiculo[] vehiculos;
  
  public SpawnerVehiculo(int cantVe){
