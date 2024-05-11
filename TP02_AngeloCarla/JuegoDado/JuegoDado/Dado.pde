@@ -12,7 +12,7 @@ class Dado extends GameObject {
 
   void dibujarDado() {
     //Dibuja el Dado
-    fill(255);
+    fill(237,152,48);
     stroke(0);
     rect(this.posicion.x, this.posicion.y, 100, 100, 10);
     //Dibuja los Puntos del Dado
