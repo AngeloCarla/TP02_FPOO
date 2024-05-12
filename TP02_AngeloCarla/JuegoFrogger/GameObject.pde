@@ -1,12 +1,12 @@
-abstract class GameObject{
- protected PVector posicion;
- 
- public GameObject(){
+abstract class GameObject {
+  protected PVector posicion;
+
+  public GameObject() {
   }
-   
- public GameObject(PVector posicion){
-  this.posicion = posicion;
+
+  public GameObject(PVector posicion) {
+    this.posicion = posicion;
   }
- 
- abstract void display();
+
+  abstract void display();
 }
