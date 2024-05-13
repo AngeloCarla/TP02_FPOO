@@ -1,17 +1,20 @@
 private Shooter shooter;
 private Asteroide asteroide;
 private JoyPad joypad;
+private HUD hud;
 
 public void setup() {
   size(500, 500);
   shooter = new Shooter(new PVector(width/2, height));
   asteroide = new Asteroide();
   joypad = new JoyPad();
+  hud = new HUD();
 }
 
 public void draw() {
   background(255,240,251);
   shooter.display();
+  hud.mostrarVida(shooter.getVida());
 
   if (joypad.IsUp()) {
     shooter.mover(1);

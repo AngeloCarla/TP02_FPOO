@@ -6,11 +6,13 @@ class Shooter extends GameObject {
   public Shooter() {
     super(new PVector(0, 0));
     velocidad = new PVector(10, 10);
+    vida = 3;
   }
 
   public Shooter(PVector posicion) {
     super(posicion);
     velocidad = new PVector(10, 10);
+    vida = 3;
   }
 
   @Override
@@ -45,7 +47,19 @@ class Shooter extends GameObject {
     }
   }
 
-  public void actualizarVidas() {
+ public void actualizarVidas() {
+    vida--; 
+    if (vida <= 0) {
+      println("Has perdido todas las vidas");
+    }
+  }
+
+  public int getVida() {
+    return vida;
+  }
+
+  public void setVida(int vida) {
+    this.vida = vida;
   }
 
   public PVector getPosicion() {
