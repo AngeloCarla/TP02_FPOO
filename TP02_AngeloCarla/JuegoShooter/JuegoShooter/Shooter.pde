@@ -17,9 +17,9 @@ class Shooter extends GameObject {
 
   @Override
     public void display() {
-    //image(imagen, this.posicion.x, this.posicion.y, 20, 20);
-    fill(0, 255, 0);
-     ellipse(this.posicion.x, this.posicion.y, 20, 20);
+    image(imagen, this.posicion.x, this.posicion.y, 20, 20);
+    /*fill(0, 255, 0);
+     ellipse(this.posicion.x, this.posicion.y, 20, 20);*/
   }
 
   @Override
