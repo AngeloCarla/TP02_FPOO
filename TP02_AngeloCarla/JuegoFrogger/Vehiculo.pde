@@ -18,15 +18,6 @@ class Vehiculo {
   }
 
   public void mover() {
-    this.posicion.x += this.velocidad.x;
-    if (fueraDePantalla()) {
-      this.posicion.x = 0;
-      spawn.generarVehiculo();
-    }
-  }
-
-  public boolean fueraDePantalla() {
-    return this.posicion.x > width;
   }
 
   public PVector getPosicion() {

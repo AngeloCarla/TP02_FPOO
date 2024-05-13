@@ -13,15 +13,6 @@ public void setup() {
 public void draw() {
   background(103, 216, 107);
   rana.display();
-  spawn.display();
-
-  for (Vehiculo vehiculo : spawn.getVehiculos()) {
-    if (vehiculo != null) {
-      vehiculo.dibujar();
-      vehiculo.mover();
-    }
-  }
-
 
   if (joypad.IsUp()) {
     rana.mover(1);
