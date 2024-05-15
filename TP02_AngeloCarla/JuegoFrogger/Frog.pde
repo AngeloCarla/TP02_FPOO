@@ -2,20 +2,23 @@ class Frog extends GameObject {
   private PVector velocidad;
   private PImage rana;
 
- public Frog() {
+  public Frog() {
     super(new PVector(0, 0));
-    this.rana = loadImage("rana.png");
-}
+  }
 
   public Frog(PVector posicion) {
     super(posicion);
     velocidad = new PVector(10, 10);
+    dibujar();
+  }
+
+  public void dibujar() {
+    rana = loadImage("rana.png");
+    rana.resize(30, 0);
   }
 
   public void display() {
-    //image(rana, this.posicion.x, this.posicion.y);
-    fill(0, 255, 0);
-    ellipse(this.posicion.x, this.posicion.y, 20, 20);
+    image(rana, this.posicion.x, this.posicion.y);
   }
 
   public void mover(int direccion) {
@@ -26,7 +29,7 @@ class Frog extends GameObject {
       }
       break;
     case 2:
-      if (posicion.y + velocidad.y <= height) {
+      if (posicion.y + velocidad.y <= height - 20) {
         this.posicion.y += this.velocidad.y;
       }
       break;
@@ -36,7 +39,7 @@ class Frog extends GameObject {
       }
       break;
     case 4:
-      if (posicion.x + velocidad.x <= width) {
+      if (posicion.x + velocidad.x <= width - 25) {
         this.posicion.x += this.velocidad.x;
       }
       break;

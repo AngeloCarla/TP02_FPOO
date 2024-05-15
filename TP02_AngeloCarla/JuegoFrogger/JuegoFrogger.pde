@@ -1,19 +1,29 @@
 private Frog rana;
 private JoyPad joypad;
-private SpawnerVehiculo spawn;
+private SpawnerVehiculo spawnVehiculos;
+private SpawnerTortuga spawnTortugas;
+private Escenario escenario;
 
 public void setup() {
-  size(500, 500);
-  rana = new Frog(new PVector(width/2, height));
+  size(600, 600);
+  rana = new Frog(new PVector(width/2, height - 20));
   joypad = new JoyPad();
-  spawn = new SpawnerVehiculo(10);
-  spawn.generarVehiculo();
+  spawnVehiculos = new SpawnerVehiculo();
+  spawnVehiculos.generarVehiculos();
+  spawnTortugas = new SpawnerTortuga();
+  spawnTortugas.generarTortugas();
+  escenario = new Escenario(new PVector(0, 300), new PVector(0, 0));
 }
 
 public void draw() {
-  background(103, 216, 107);
+  background(0);
+  escenario.display();
   rana.display();
-
+  spawnVehiculos.visualizarVehiculos();
+  spawnVehiculos.mover(width);
+  spawnTortugas.visualizarTortugas();
+  spawnTortugas.mover(width);
+  
   if (joypad.IsUp()) {
     rana.mover(1);
   }

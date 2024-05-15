@@ -7,11 +7,10 @@ abstract class GameObject {
 
   public GameObject(PVector posicion) {
     this.posicion = posicion;
-    this.imagen = imagen;
   }
 
   abstract void display();
-  public abstract void mover(int direccion);
+  abstract void mover(int direccion);
 
   public PImage getImagen() {
     return this.imagen;

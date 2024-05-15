@@ -1,16 +1,14 @@
 class Asteroide extends GameObject {
-  private PVector velocidad;
-
+  private float velocidad;
 
   public Asteroide() {
     super(new PVector(random(width), - 100));
-    velocidad = new PVector(10, 10);
     this.imagen = loadImage("asteroide.png");
   }
 
-  public Asteroide(PVector posicion) {
+  public Asteroide(PVector posicion, float velocidad) {
     super(posicion);
-    velocidad = new PVector(random(5), random(5));
+    this.velocidad = velocidad;
     dibujar();
   }
 
@@ -24,15 +22,11 @@ class Asteroide extends GameObject {
   }
 
   @Override
-    void mover(int direccion) {
-    switch(direccion) {
-    case 1:
-      if (this.posicion.y<=height) {
-        this.posicion.y+=this.velocidad.y;
-      } else {
-        this.posicion.y=0;
-      }
-      break;
+    public void mover() {
+    if (this.posicion.y<=height) {
+      this.posicion.y+=this.velocidad;
+    } else {
+      this.posicion.y=0;
     }
   }
 
@@ -44,11 +38,11 @@ class Asteroide extends GameObject {
     this.posicion = posicion;
   }
 
-  public PVector getVelocidad() {
+  public float getVelocidad() {
     return this.velocidad;
   }
 
-  public void setVelocidad(PVector velocidad) {
+  public void setVelocidad(float velocidad) {
     this.velocidad=velocidad;
   }
 }

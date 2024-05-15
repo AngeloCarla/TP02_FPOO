@@ -1,16 +1,16 @@
-class Vehiculo extends GameObject {
+class Tortuga extends GameObject{
   private PVector posicion;
   private PVector velocidad;
-  private PImage vehiculo;
+  private PImage tortuga;
 
-  public Vehiculo(PVector posicion, PVector velocidad, PImage vehiculo) {
+  public Tortuga(PVector posicion, PVector velocidad, PImage tortuga) {
     this.posicion = posicion;
     this.velocidad = velocidad;
-    this.vehiculo = vehiculo;
+    this.tortuga = tortuga;
   }
 
   public void display() {
-    image(vehiculo, posicion.x, posicion.y);
+    image(tortuga, posicion.x, posicion.y);
   }
 
   public void mover() {

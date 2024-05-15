@@ -1,45 +1,55 @@
-private Shooter shooter;
+private Nave nave;
 private JoyPad joypad;
-private HUD hud;
 private Asteroide[] asteroide;
+private Enemigo[] alien;
+private Bala[] bala;
 
 public void setup() {
   size(500, 500);
-  shooter = new Shooter(new PVector(width/2 - 40, height - 70));
+  nave = new Nave(new PVector(width/2 - 40, height - 70), new PVector(10, 10));
   asteroide = new Asteroide[5];
   joypad = new JoyPad();
-  hud = new HUD();
   for (int i= 0; i < 4; i++) {
-    asteroide[i] = new Asteroide(new PVector(random(width), 0));
+    asteroide[i] = new Asteroide(new PVector(random(width), 0), random(2, 3));
   }
+  alien = new Enemigo[6];
+  for (int i= 0; i < 5; i++) {
+    alien[i] = new Enemigo(new PVector(random(width), 0), random(2, 3));
+  }
+  bala = new Bala[10];
 }
 
 
 public void draw() {
-  background(114, 53, 147);
-  shooter.display();
-  hud.mostrarVida(shooter.getVida());
-
+  background(0);
   for (int i= 0; i < 4; i++) {
     asteroide[i].display();
-    asteroide[i].mover(1);
+    asteroide[i].mover();
+  }
+  for (int i= 0; i < 5; i++) {
+    alien[i].display();
+    alien[i].mover();
   }
 
-  if (joypad.IsUp()) {
-    shooter.mover(1);
+  for (int i= 0; i < bala.length; i++) {
+    if (bala[i] != null) {
+      bala[i].display();
+      bala[i].mover();
+    }
   }
-  if (joypad.IsDown()) {
-    shooter.mover(2);
-  }
-  if (joypad.IsLeft()) {
-    shooter.mover(3);
-  }
-  if (joypad.IsRight()) {
-    shooter.mover(4);
-  }
+
+  nave.display();
+  nave.mover();
+  nave.readCommand();
+  int direction = joypad.getDirection();
+  nave.setDirection(direction);
 }
 
 public void keyPressed() {
+  if (key=='e'||key=='E') {
+    nave.dispararBalas();
+  }
+
   if (key=='w'||key=='W'||keyCode==UP) {
     joypad.setUp(true);
   }

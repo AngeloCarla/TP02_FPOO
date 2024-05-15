@@ -4,6 +4,20 @@ class JoyPad {
   private boolean left;
   private boolean right;
 
+  public int getDirection() {
+    if (up) {
+      return 1;
+    } else if (down) {
+      return 2;
+    } else if (left) {
+      return 3;
+    } else if (right) {
+      return 4;
+    } else {
+      return 0;
+    }
+  }
+
   public boolean IsUp() {
     return this.up;
   }

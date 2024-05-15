@@ -26,7 +26,6 @@ class Dado extends GameObject {
 
   void dibujarDado() {
     image(dado, this.posicion.x, this.posicion.y, 100, 100);
-    //Dibuja al dado y a los Puntos del Dado
     switch(numero) {
     case 1:
       image(uno, this.posicion.x, this.posicion.y, 100, 100);
